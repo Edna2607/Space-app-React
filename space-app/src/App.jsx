@@ -1,4 +1,5 @@
 import styled from "styled-components"
+import GlobalStyles from "./components/GlobalStyles";
 
 
 const FondoGradiente = styled.div`
@@ -13,10 +14,12 @@ function App() {
 
   return (
     <>
-      <FondoGradiente />
-      
+      <FondoGradiente>
+         <GlobalStyles />
+      </FondoGradiente >
     </>
   )
 }
+
 
 export default App
