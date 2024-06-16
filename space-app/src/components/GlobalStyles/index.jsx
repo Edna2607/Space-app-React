@@ -8,11 +8,6 @@ const GlobalStyles = createGlobalStyle`
 /* Document
    ========================================================== */
 
-/**
- * 1. Correct the line height in all browsers.
- * 2. Prevent adjustments of font size after orientation changes in iOS.
- */
-
 html {
   line-height: 1.15; /* 1 */
   -webkit-text-size-adjust: 100%; /* 2 */
@@ -29,42 +24,22 @@ body {
   margin: 0;
 }
 
-/**
- * Render the main element consistently in IE.
- */
-
 main {
   display: block;
 }
 
-/**
- * Correct the font size and margin on h1 elements within section and
- * article contexts in Chrome, Firefox, and Safari.
- */
 
 h1 {
   font-size: 2em;
   margin: 0.67em 0;
 }
 
-/* Grouping content
-   ========================================================== */
-
-/**
- * 1. Add the correct box sizing in Firefox.
- * 2. Show the overflow in Edge and IE.
- */
 
 hr {
   box-sizing: content-box; /* 1 */
   height: 0; /* 1 */
   overflow: visible; /* 2 */
 }
-
-/**
- * 1. Correct the inheritance and scaling of font size in all browsers.
- * 2. Correct the odd em font sizing in all browsers.
- */
 
 pre {
   font-family: monospace, monospace; /* 1 */
@@ -73,10 +48,6 @@ pre {
 
 /* Text-level semantics
    ==========================================================*/
-
-/**
- * Remove the gray background on active links in IE 10.
- */
 
 a {
   background-color: transparent;
@@ -143,9 +114,6 @@ sup {
   top: -0.5em;
 }
 
-/* Embedded content
-   ========================================================== */
-
 /**
  * Remove the border on images inside links in IE 10.
  */
@@ -154,13 +122,6 @@ img {
   border-style: none;
 }
 
-/* Forms
-   ========================================================== */
-
-/**
- * 1. Change the font styles in all browsers.
- * 2. Remove the margin in Firefox and Safari.
- */
 
 button,
 input,
@@ -173,29 +134,17 @@ textarea {
   margin: 0; /* 2 */
 }
 
-/**
- * Show the overflow in IE.
- * 1. Show the overflow in Edge.
- */
-
 button,
 input { /* 1 */
   overflow: visible;
 }
 
-/**
- * Remove the inheritance of text transform in Edge, Firefox, and IE.
- * 1. Remove the inheritance of text transform in Firefox.
- */
 
 button,
 select { /* 1 */
   text-transform: none;
 }
 
-/**
- * Correct the inability to style clickable types in iOS and Safari.
- */
 
 button,
 [type="button"],
