@@ -17,9 +17,9 @@ function App() {
   return (
     <>
       <FondoGradiente>
-         <GlobalStyles />
-         <Cabecera />
-         <BarraLateral/>
+        <GlobalStyles />
+        <Cabecera />
+        <BarraLateral />
       </FondoGradiente >
     </>
   )

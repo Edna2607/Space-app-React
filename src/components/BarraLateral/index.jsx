@@ -1,16 +1,22 @@
+import styled from "styled-components";
 
 
+const ListaEstilizada = styled.ul`
+    margin: 0;
+    padding: 0;
+    list-style: none; /*Para que en la lista no nos aparezcan los puntos */
+`;
 
 const BarraLateral = () => {
-    return(
+    return (
         <aside>
-           <nav>
-             <ul>
-                <li>
-                    <a href="">Inicio</a>
-                </li>
-             </ul>
-           </nav>
+            <nav>
+                <ListaEstilizada>
+                    <li>
+                        <a href="">Inicio</a>
+                    </li>
+                </ListaEstilizada>
+            </nav>
         </aside>
     )
 }
