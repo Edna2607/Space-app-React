@@ -9,6 +9,7 @@ const ItemListaEstilizado = styled.li`
    align-items: center; /*los elementos Al centro*/
    gap: 16px; /*separacion*/
    color: ${props => props.$activo ? "#7B78E5" : "#D9D9D9"}; /*si la prop es true se marca un color y si es false tendrá un color diferente */
+   font-family: ${props => props.$activo ? "GandhiSansBold" : "GandhiSansRegular"}; /*si es true cambia a negrita y sino esta normal */
 `
 
 

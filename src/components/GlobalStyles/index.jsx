@@ -1,8 +1,18 @@
 import { createGlobalStyle } from "styled-components";
-
+import GandhiSansRegular from "./fonts/GandhiSans-Regular.otf";
+import GandhiSansBold from "./fonts/GandhiSans-Bold.otf";
 
 
 const GlobalStyles = createGlobalStyle`
+   @font-face {
+    font-family: "GandhiSansRegular";
+    src: local("Gandhi Sans Regular"), local("GandhiSansRegular"), url(${GandhiSansRegular});
+   }
+   @font-face {
+    font-family: "GandhiSansBold";
+  src: local("Gandhi Sans Bold"), local("GandhiSansBold"), url(${GandhiSansBold});
+   }
+
    /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 
 /* Document
@@ -11,6 +21,7 @@ const GlobalStyles = createGlobalStyle`
 html {
   line-height: 1.15; /* 1 */
   -webkit-text-size-adjust: 100%; /* 2 */
+  font-family: "GandhiSansRegular";
 }
 
 /* Sections
@@ -52,11 +63,6 @@ pre {
 a {
   background-color: transparent;
 }
-
-/**
- * 1. Remove the bottom border in Chrome 57-
- * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
- */
 
 abbr[title] {
   border-bottom: none; /* 1 */
