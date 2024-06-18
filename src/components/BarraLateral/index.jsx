@@ -1,5 +1,5 @@
 import styled from "styled-components";
-
+import ItemNavegacion from "./ItemNavegacion";
 
 const ListaEstilizada = styled.ul`
     margin: 0;
@@ -12,9 +12,12 @@ const BarraLateral = () => {
         <aside>
             <nav>
                 <ListaEstilizada>
-                    <li>
-                        <a href="">Inicio</a>
-                    </li>
+                    <ItemNavegacion iconoActivo="iconos/home-activo.png" iconoInactivo="iconos/home-inactivo.png" activo>
+                        Inicio
+                    </ItemNavegacion>
+                    <ItemNavegacion iconoActivo="iconos/mas-vistas-activo.png" iconoInactivo="iconos/mas-vistas-inactivo.png" >
+                        Mas Visitados
+                    </ItemNavegacion>
                 </ListaEstilizada>
             </nav>
         </aside>
