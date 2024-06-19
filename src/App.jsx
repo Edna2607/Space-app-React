@@ -4,6 +4,7 @@ import Cabecera from "./components/Cabecera";
 import BarraLateral from "./components/BarraLateral";
 import Banner from "./components/Banner";
 import banner from "./assets/banner.png"
+import Galeria from "./components/Galeria";
 
 
 const FondoGradiente = styled.div`
@@ -13,19 +14,47 @@ const FondoGradiente = styled.div`
     min-height: 100vh;
 `
 
+/*Tamaño del container  dependiendo si es para portatil o pantalla de computador mas grande */
+const AppContainer = styled.div`
+   width: 1280px; /*pantalla de portatil : 1280px / si se tiene un computador mas grande = 1440px */
+   max-width: 100%;
+   margin: 0 auto;
+`
+
+/* la barra lateral y el banner queden juntos*/
+const MainContainer = styled.main`
+   display: flex;
+   gap: 24px;
+`
+
+const ContenidoGaleria = styled.section`
+   display: flex;
+   flex-direction: column; /*para que se posicione uno debajo del otro */
+   flex-grow: 1; 
+`
 
 
 
 function App() {
 
-
   return (
     <>
       <FondoGradiente>
         <GlobalStyles />
-        <Cabecera />
-        <BarraLateral />
-        <Banner texto="La Galeria más completa de fotos del espacio" $backgroundImage={banner}/>
+
+        <AppContainer >
+          <Cabecera />
+          <MainContainer>
+            <BarraLateral />
+
+            <ContenidoGaleria>
+              <Banner texto="La Galeria más completa de fotos del espacio" $backgroundImage={banner} />
+              <Galeria />
+            </ContenidoGaleria>
+
+          </MainContainer>
+        </AppContainer>
+
       </FondoGradiente >
     </>
   )
