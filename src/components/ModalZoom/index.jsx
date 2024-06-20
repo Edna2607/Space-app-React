@@ -1,16 +1,33 @@
+import styled from "styled-components";
+import Imagen from "../Galeria/Imagen";
 
 
+const Overlay = styled.div`
+  background-color: rgba(0, 0, 0, 0.7);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+`
 
- /*La propiedad de open hace que el dialogo este abierto y permanezca abierto */
+const DialogEstilizado = styled.dialog`
+   position: absolute;
+   top: 294px;
+`
 
-const ModalZoom = ({foto}) =>{
+/*La propiedad de open hace que el dialogo este abierto y permanezca abierto */
+const ModalZoom = ({ foto }) => {
   return <>
-    <dialog open={!!foto}>
-        <p>Greeting, one and all!</p>
-        <form method="dialog">
-            <button>OK</button>
-        </form>
-    </dialog>
+    {foto &&  <>
+     <Overlay/>
+      <DialogEstilizado open={!!foto}> 
+      <Imagen foto={foto} expandida={true} />
+      <form method="dialog">
+        <button>OK</button>
+      </form>
+    </DialogEstilizado>
+    </>}
   </>
 }
 
