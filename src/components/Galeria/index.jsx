@@ -2,27 +2,38 @@ import styled from "styled-components";
 import Titulo from "../Titulo";
 import Populares from "./Populares";
 import Tag from "./Tags";
+import Imagen from "./Imagen";
 
 
 const GaleriaContainer = styled.div`
    display: flex;
+   gap: 24px;
 `
 
 const SeccionFluida = styled.section`
    flex-grow: 1;
 `
 
-const Galeria = ({fotos=[]}) => {
+const ImagenesContainer = styled.section`
+   display: flex;
+   justify-content: space-between;
+   flex-wrap: wrap;
+   gap: 24px;
+`
+
+const Galeria = ({ fotos = [] }) => {
     return (
         <>
             <Tag />
             <GaleriaContainer>
                 <SeccionFluida>
                     <Titulo>Navegue por la Galeria</Titulo>
-                    {fotos.map(foto=>{
-                        return <p key={foto.id}>{foto.path}</p>
-                    })}
-
+                    <ImagenesContainer>
+                        {fotos.map(foto => <Imagen
+                            key={foto.id}
+                            foto={foto} />)
+                        }
+                    </ImagenesContainer>
                 </SeccionFluida>
                 <Populares />
             </GaleriaContainer>

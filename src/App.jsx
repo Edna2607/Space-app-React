@@ -7,6 +7,7 @@ import banner from "./assets/banner.png"
 import Galeria from "./components/Galeria";
 import fotos from "./fotos.json";
 import { useState } from "react";
+import ModalZoom from "./components/ModalZoom";
 
 
 const FondoGradiente = styled.div`
@@ -52,12 +53,13 @@ const App = () => {
             <BarraLateral />
 
             <ContenidoGaleria>
-              <Banner texto="La Galeria más completa de fotos del espacio" $backgroundImage={banner} />
-              <Galeria fotos={fotosDeGaleria}/>
+              <Banner texto="La Galeria más completa de fotos del espacio" backgroundImage={banner} />
+              <Galeria fotos={fotosDeGaleria} />
             </ContenidoGaleria>
 
           </MainContainer>
         </AppContainer>
+        <ModalZoom />
 
       </FondoGradiente >
     </>
