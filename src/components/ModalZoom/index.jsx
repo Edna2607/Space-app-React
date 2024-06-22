@@ -15,6 +15,19 @@ const Overlay = styled.div`
 const DialogEstilizado = styled.dialog`
    position: absolute;
    top: 294px;
+   background: transparent;
+    padding: 0;
+    border: 0;
+    width: 1156px;
+    display: flex;
+    justify-content: center;
+    form {
+        button {
+            position: relative;
+            top: 20px;
+            right: 60px;
+        }
+    }
 `
 
 /*La propiedad de open hace que el dialogo este abierto y permanezca abierto */

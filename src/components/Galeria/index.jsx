@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import Titulo from "../Titulo";
-import Populares from "./Populares";
+import Populares from "../Populares";
 import Tag from "./Tags";
 import Imagen from "./Imagen";
 
@@ -37,7 +37,7 @@ const Galeria = ({ fotos = [], alSeleccionarFoto, alAlternarFavorito }) => {
                         }
                     </ImagenesContainer>
                 </SeccionFluida>
-                <Populares />
+                <Populares/> 
             </GaleriaContainer>
         </>
     )
