@@ -41,14 +41,22 @@ const ContenidoGaleria = styled.section`
 const App = () => {
   const [fotosDeGaleria, setFotosDeGaleria] = useState(fotos)
   const [fotoSeleccionada, setFotoSeleccionada] = useState(null)
-  
+
   const alAlternarFavorito = (foto) => {
-     setFotosDeGaleria(fotosDeGaleria.map(fotoDeGaleria=>{
+
+ if(foto.id === fotoSeleccionada?.id){
+  setFotoSeleccionada({
+    ...fotoSeleccionada,
+    favorita: !foto.favorita
+  })
+ }
+
+    setFotosDeGaleria(fotosDeGaleria.map(fotoDeGaleria => {
       return {
         ...fotoDeGaleria,
         favorita: fotoDeGaleria.id === foto.id ? !foto.favorita : fotoDeGaleria.favorita
       }
-     }))
+    }))
   }
 
 
@@ -64,12 +72,12 @@ const App = () => {
 
             <ContenidoGaleria>
               <Banner texto="La Galeria más completa de fotos del espacio" backgroundImage={banner} />
-              <Galeria alSeleccionarFoto={foto=>setFotoSeleccionada(foto)} fotos={fotosDeGaleria} alAlternarFavorito={alAlternarFavorito}/>
+              <Galeria alSeleccionarFoto={foto => setFotoSeleccionada(foto)} fotos={fotosDeGaleria} alAlternarFavorito={alAlternarFavorito} />
             </ContenidoGaleria>
 
           </MainContainer>
         </AppContainer>
-        <ModalZoom foto={fotoSeleccionada}/>
+        <ModalZoom foto={fotoSeleccionada} alCerrar={() => setFotoSeleccionada(null)} alAlternarFavorito={alAlternarFavorito} />
       </FondoGradiente >
     </>
   )

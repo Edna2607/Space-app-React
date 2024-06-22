@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import Imagen from "../Galeria/Imagen";
+import BotonIcono from "../BotonIcono";
 
 
 const Overlay = styled.div`
@@ -17,16 +18,21 @@ const DialogEstilizado = styled.dialog`
 `
 
 /*La propiedad de open hace que el dialogo este abierto y permanezca abierto */
-const ModalZoom = ({ foto }) => {
+const ModalZoom = ({ foto, alCerrar, alAlternarFavorito }) => {
   return <>
-    {foto &&  <>
-     <Overlay/>
-      <DialogEstilizado open={!!foto}> 
-      <Imagen foto={foto} expandida={true} />
-      <form method="dialog">
-        <button>OK</button>
-      </form>
-    </DialogEstilizado>
+    {foto && <>
+      <Overlay />
+      <DialogEstilizado open={!!foto} onClose={alCerrar}>
+        <Imagen foto={foto} expandida={true}
+          alAlternarFavorito={alAlternarFavorito} />
+        <form method="dialog">
+
+          <BotonIcono formMethod="dialog">
+            <img src="/iconos/cerrar.png" alt="Icono de Cerrar" />
+          </BotonIcono>
+
+        </form>
+      </DialogEstilizado>
     </>}
   </>
 }

@@ -30,8 +30,8 @@ const Galeria = ({ fotos = [], alSeleccionarFoto, alAlternarFavorito }) => {
                     <Titulo>Navegue por la Galeria</Titulo>
                     <ImagenesContainer>
                         {fotos.map(foto => <Imagen
-                        alAlternarFavorito={alAlternarFavorito}
-                        alSolicitarZoom={alSeleccionarFoto}
+                            alAlternarFavorito={alAlternarFavorito}
+                            alSolicitarZoom={alSeleccionarFoto}
                             key={foto.id}
                             foto={foto} />)
                         }
