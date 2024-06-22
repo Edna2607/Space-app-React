@@ -41,6 +41,16 @@ const ContenidoGaleria = styled.section`
 const App = () => {
   const [fotosDeGaleria, setFotosDeGaleria] = useState(fotos)
   const [fotoSeleccionada, setFotoSeleccionada] = useState(null)
+  
+  const alAlternarFavorito = (foto) => {
+     setFotosDeGaleria(fotosDeGaleria.map(fotoDeGaleria=>{
+      return {
+        ...fotoDeGaleria,
+        favorita: fotoDeGaleria.id === foto.id ? !foto.favorita : fotoDeGaleria.favorita
+      }
+     }))
+  }
+
 
   return (
     <>
@@ -54,7 +64,7 @@ const App = () => {
 
             <ContenidoGaleria>
               <Banner texto="La Galeria más completa de fotos del espacio" backgroundImage={banner} />
-              <Galeria alSeleccionarFoto={foto=>setFotoSeleccionada(foto)} fotos={fotosDeGaleria} />
+              <Galeria alSeleccionarFoto={foto=>setFotoSeleccionada(foto)} fotos={fotosDeGaleria} alAlternarFavorito={alAlternarFavorito}/>
             </ContenidoGaleria>
 
           </MainContainer>
