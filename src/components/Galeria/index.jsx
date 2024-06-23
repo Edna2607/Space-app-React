@@ -30,7 +30,8 @@ const Galeria = ({ fotos = [], alSeleccionarFoto, alAlternarFavorito, consulta }
                     <Titulo>Navegue por la Galeria</Titulo>
                     <ImagenesContainer>
                         {fotos.filter(foto=>{
-                            return consulta == '' || foto.titulo.toLowerCase().includes(consulta.toLowerCase())
+                            return consulta == '' || foto.titulo.toLocaleLowerCase().normalize("NFD").replace(/\p{Diacritic}/gu,"").
+                            includes(consulta.toLocaleLowerCase().normalize("NFD").replace(/\p{Diacritic}/gu,""))
                         })
                             .map(foto => <Imagen
                             alAlternarFavorito={alAlternarFavorito}
